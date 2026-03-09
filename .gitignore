@@ -1,0 +1,48 @@
+# Ignore Python virtual environments
+
+env/
+venv/
+.venv/
+
+# Ignore model folders
+
+Models/
+
+# Ignore PyTorch model weights
+
+*.pt
+
+# (Optional but recommended) Ignore other large ML artifacts
+
+*.onnx
+*.engine
+
+# Python cache
+
+**pycache**/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+
+.ipynb_checkpoints/
+
+# OS files
+
+.DS_Store
+
+# DeepStream binaries
+deepstream/deepstream-8.0/lib/
+
+# DeepStream sample videos
+deepstream/deepstream-8.0/samples/streams/
+
+# Model weights
+*.pt
+*.engine
+*.onnx
+
+# Python env
+env/
+venv/
+.venv/

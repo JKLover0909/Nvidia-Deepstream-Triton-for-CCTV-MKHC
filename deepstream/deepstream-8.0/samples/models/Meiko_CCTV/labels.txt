@@ -1,0 +1,7 @@
+coat
+glove
+hat
+mask
+numbertag
+roller
+shoe
