@@ -1,5 +1,17 @@
-python3 deepstream_test_3.py -i "rtsp://root:Mkvc%402025@192.168.40.40:554/media/stream.sdp?profile=Profile101" 
+# NVIDIA DeepStream + Triton — CCTV MKHC
 
-python3 deepstream_test_3.py -i "rtsp://root:Mkvc%402025@192.168.40.40:554/media/stream.sdp?profile=Profile100" -g nvinfer -c dstest3_meiko.txt 
+DeepStream pipeline chạy inference (nvinfer / YOLO11n person detection) trên luồng RTSP camera CCTV.
 
-python3 deepstream_test_3_yolo11n_person.py -i "rtsp://root:Mkvc%402025@192.168.40.40:554/media/stream.sdp?profile=Profile100" -c dstest3_yolo11n_person.txt
+## Ví dụ chạy
+
+```bash
+export RTSP_URL='rtsp://<user>:<password>@<camera-ip>:554/media/stream.sdp?profile=Profile101'
+
+python3 deepstream_test_3.py -i "$RTSP_URL"
+
+python3 deepstream_test_3.py -i "$RTSP_URL" -g nvinfer -c dstest3_meiko.txt
+
+python3 deepstream_test_3_yolo11n_person.py -i "$RTSP_URL" -c dstest3_yolo11n_person.txt
+```
+
+**Không đặt URL/credential camera trực tiếp trong source, notebook, hay README** — luôn dùng biến môi trường.
