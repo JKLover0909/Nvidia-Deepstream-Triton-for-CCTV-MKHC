@@ -14,8 +14,8 @@ Pipeline NVIDIA DeepStream chạy inference (nvinfer / YOLO11n person detection)
 
 ## Lưu ý cấu trúc
 
-- `deepstream/deepstream-8.0/` (54MB, ~1400 file) là **toàn bộ SDK NVIDIA DeepStream** được commit nguyên khối vào repo — không phải code của user, thuộc giấy phép riêng của NVIDIA. Đây là repo bloat đáng kể; cân nhắc bỏ khỏi git (dùng submodule/install script thay vì commit thẳng) — nhưng đây là quyết định lớn, **hỏi lại người dùng trước khi xóa**, không tự ý làm.
-- Các file config DeepStream mẫu trong `deepstream/deepstream-8.0/sources/.../configs/*.txt` có chứa `rtsp://foo.com/...` — đây là placeholder gốc của NVIDIA, không phải bí mật thật, không cần sửa.
+- NVIDIA DeepStream SDK 8.0 **không còn được commit** (đã gỡ ~1.400 file / 54MB khỏi git 2026-11-23): cài SDK từ NVIDIA (mặc định `/opt/nvidia/deepstream/deepstream-8.0`). Trong `deepstream/deepstream-8.0/` repo chỉ giữ `samples/models/Meiko_CCTV/labels.txt` (7 lớp PPE của dự án, notebook dùng đường dẫn này); `.gitignore` chặn phần còn lại. Trọng số `ppe_detector.pt/.onnx/.engine` cũng không commit. `deepstream/deepstream` là symlink tới `deepstream-8.0`.
+- Các file config/mẫu của SDK (`samples/configs/...`, `sources/...`) lấy từ bản cài DeepStream, không có trong repo.
 
 ## Kiểm thử an toàn
 

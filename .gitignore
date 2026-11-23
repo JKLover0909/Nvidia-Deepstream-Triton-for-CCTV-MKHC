@@ -31,11 +31,14 @@ Models/
 
 .DS_Store
 
-# DeepStream binaries
-deepstream/deepstream-8.0/lib/
-
-# DeepStream sample videos
-deepstream/deepstream-8.0/samples/streams/
+# NVIDIA DeepStream SDK: install it from NVIDIA, do not commit it.
+# Only the project's own label file under samples/models/Meiko_CCTV/ is tracked.
+/deepstream/deepstream-8.0/*
+!/deepstream/deepstream-8.0/samples/
+/deepstream/deepstream-8.0/samples/*
+!/deepstream/deepstream-8.0/samples/models/
+/deepstream/deepstream-8.0/samples/models/*
+!/deepstream/deepstream-8.0/samples/models/Meiko_CCTV/
 
 # Model weights
 *.pt
